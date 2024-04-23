@@ -52,7 +52,7 @@ form.addEventListener("submit", (e) => {
     if (filteredArray.length > 0) {
       msg.textContent = `You already know the weather for ${
         filteredArray[0].querySelector(".city").textContent
-      } ...otherwise be more specific by providing the country code as well`;
+      } ...otherwise be more specific by providing the country code as well.`;
 
       msg.classList.add("visible");
 
