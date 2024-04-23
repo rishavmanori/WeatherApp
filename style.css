@@ -1,0 +1,172 @@
+:root {
+  --global-transition: all 0.2s ease-in-out;
+}
+html {
+  font-family: "Barlow Condensed";
+  font-size: 16px;
+  color: white;
+  /* background-image: url(images/bg-image.jpg); */
+  background-color: #1b263b;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding: 4rem 2rem;
+}
+
+p {
+  margin: 0 0 1.5rem;
+}
+
+h1 {
+  font-size: 2.375rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+/* form */
+
+form {
+  width: 100%;
+  margin-bottom: 2rem;
+  max-width: 30rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+input {
+  border-radius: 4px;
+  border: 0;
+}
+
+input[type="text"] {
+  height: 2.75rem;
+  font-family: "Barlow Condensed";
+  background: url("images/search.svg") 0.75rem center no-repeat;
+  background-color: #0d1b2a;
+  background-size: 25px;
+  /* border: 1px solid #6c757d; */
+  padding-left: 2.5rem;
+  outline: none;
+  flex-grow: 1;
+  color: #e0e1dd;
+}
+
+input::placeholder {
+  color: #415a77;
+  font-family: "Barlow Condensed";
+}
+
+.form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+form button {
+  height: 2.75rem;
+  width: 2.75rem;
+  background-color: #778da9;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.form-msg {
+  background-color: #415a77;
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 4px 4px;
+  margin-left: 0.75rem;
+  width: 75%;
+  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+  z-index: -1;
+  position: relative;
+  transition: var(--global-transition);
+}
+
+.form-msg.visible {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* cities */
+.cities {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  gap: 2rem;
+  margin: 0 0 4rem;
+}
+
+.cities li {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 2rem;
+  background-color: #e0e1dd;
+  color: #0d1b2a;
+  border-radius: 4px;
+  box-shadow: 8px 8px 0px rgba(255, 255, 255, 0.08);
+}
+.city-condition {
+  color: #415a77;
+}
+.country {
+  color: white;
+  background-color: #415a77;
+  border-radius: 4px;
+  padding: 0.125rem 0.25rem;
+  margin-left: 0.5rem;
+}
+
+/* 560px + */
+
+@media screen and (min-width: 560px) {
+  .cities {
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  }
+  .cities li {
+    flex-direction: column;
+    text-align: center;
+  }
+  .city-condition {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* 768px + */
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 4rem;
+  }
+}
